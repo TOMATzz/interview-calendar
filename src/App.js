@@ -11,7 +11,7 @@ const App = () => {
 
    const { height, width } = useWindowDimensions();
 
-   // console.log('____' + height, width)
+
 
    return (
 
