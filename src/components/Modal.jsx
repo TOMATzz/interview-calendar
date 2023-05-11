@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ModalCard, ModalContainer, ModalText, ModalInput, ModalButton, ModalContainerButton } from "../styles/hederStyle.js"
+import { ModalCard, ModalContainer, ModalText, ModalInput, ModalButton, ModalContainerButton } from "../styles/modal.js"
 import { useDispatch, useSelector } from 'react-redux'
 import { addElemCalendarEvents } from '../store/calendarEventDataArraySlice.js'
 import { setModalEvent } from '../store/modalSlise.js'
