@@ -9,8 +9,7 @@ import Modal from './Modal'
 
 
 const CalendarHeader = () => {
-
-   var data = new Date();
+var data = new Date();
    var currYear = data.getFullYear();
    var currDateBar = [];
    const dispatch = useDispatch();
@@ -19,6 +18,7 @@ const CalendarHeader = () => {
    const monthsOfTtheYear = ["January ", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December "];
    const [currDate, setCurrDate] = useState(data.getDate());
    const textButtonDelete = useSelector((state) => state.eventDeleteButtonText.deleteButtonText)
+
 
    for (let i = -3; i <= 3; i++) {
       currDateBar[i + 3] = new Date(currYear, currMonth, currDate + i);

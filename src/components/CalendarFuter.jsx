@@ -3,9 +3,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import { deleteElemCalendarEvents } from "../store/calendarEventDataArraySlice"
 import { Futer, FuterText, FuterButton } from "../styles/futerStyle.js"
 import { setEventDeleteButtonText } from "../store/deleteEventButtonSlice"
-
+// import useWindowDimensions from "../styles/index.js";
 
 const CalendarFuter = () => {
+
+
+   // const { height, width } = useWindowDimensions();
+
+   // console.log('____' + height, width)
 
    var data = new Date();
    var newArrayCalendarEvent = [];

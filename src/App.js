@@ -5,18 +5,22 @@ import CalendarFuter from './components/CalendarFuter';
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { GlobalStyle, Calendar, CalendarContainer } from "./styles/app.js"
-
+import useWindowDimensions from "./styles/index.js";
 
 const App = () => {
+
+   const { height, width } = useWindowDimensions();
+
+   // console.log('____' + height, width)
 
    return (
 
       <Provider store={store}>
-         <Calendar>
+         <Calendar width={width} height={height}>
 
             <GlobalStyle />
 
-            <CalendarContainer>
+            <CalendarContainer width={width} height={height}>
 
                <CalendarHeader />
 

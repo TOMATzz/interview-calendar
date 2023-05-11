@@ -2,25 +2,30 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   body {
+   display: flex;
    font-family: Montserrat,Arial, Verdana;
    font-size: 132%;
    font-weight: bold;
    color: #A8B2B9;
-    min-height: 1px;
-
-   touch-action: pan-x pan-y;
-  height: 100% 
+   @media (max-width: 740px) { 
+      justify-content: left;
+   }
+   @media (min-width: 740px) { 
+      justify-content: center;
+   }
+}
 `
-
 export const Calendar = styled.div`
 
- display: flex;
- justify-content: center;
- @media (max-width: 740px) {
- justify-content: left;
-
-  }
-  
+ display: block;
+ //  width: ${props => props.width < 740 ? props.width : 740}px;
+  @media (max-width: 740px) { 
+   width: 100vw;
+   min-width: 270px;
+ }
+  @media (min-width: 740px) { 
+   width: 740px;
+ }
 `
 export const CalendarContainer = styled.div`
  display: flex;
@@ -28,4 +33,5 @@ export const CalendarContainer = styled.div`
  margin-left:10px;
  position: relative;
  flex-direction: column;
+ height:${props => props.height - 30}px;
 `

@@ -1,6 +1,7 @@
 
 import styled from 'styled-components'
 
+
 export const NavBar = styled.div`
  display: flex;
  font-weight: bold;
@@ -21,7 +22,8 @@ export const ControlPanelButton = styled.button`
 `
 export const ControlPanel = styled.div`
  display: inline-block;
- width: 740px;
+ width:100%;
+ max-width: 740px;
  background: #f2f3f3ee;
  border-top: 1px solid #e1e1e1 ; 
  border-bottom: 1px solid #e1e1e1;
@@ -53,8 +55,9 @@ export const MonthYear = styled.div`
 export const ThisDay = styled.div`
  display: flex;
  background:${props => props.red ? "red" : 'transparent'};
- width: 8%;
- height: 47px;
+ width:35px;
+ height:35px;
+
  justify-content: center;
  align-items: center;
  border-radius:${props => props.red ? "50%" : 'none'}; 
