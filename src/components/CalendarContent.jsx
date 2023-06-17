@@ -1,27 +1,28 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+// import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { bake_cookie } from 'sfcookies';
+// import { bake_cookie } from 'sfcookies';
 import { useDispatch } from 'react-redux'
 import { setCalendarEventId, setOnClickEvent } from "../store/calendarEventSlise"
 import { GridContainer, Row, Cell, CellActive, GridTimeline, Grid } from "../styles/contentStyle.js"
 
 const CalendarContent = () => {
-var numberOfCells = 7;
+   var numberOfCells = 7;
    var dataTime = ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '24:00'];
 
 
    const dispatch = useDispatch();
-   const cookie_key = 'arrEventCookie';
+   // const cookie_key = 'arrEventCookie';
 
    const startDate = useSelector((state) => state.startDate.valueDate);
    const startMonth = useSelector((state) => state.startMonth.valueMonth);
    const arrayCalendarEvents = useSelector((state) => state.arrayOfCalendarEvents.valueCalendarEvents);
 
-   useEffect(() => {
+   // useEffect(() => {
 
-      bake_cookie(cookie_key, arrayCalendarEvents);
+   //    bake_cookie(cookie_key, arrayCalendarEvents);
 
-   }, [arrayCalendarEvents]);
+   // }, [arrayCalendarEvents]);
 
 
 

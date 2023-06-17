@@ -1,30 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { bake_cookie, read_cookie } from 'sfcookies';
+// import { bake_cookie, read_cookie } from 'sfcookies';
 
-const cookie_key = 'arrEventCookie';
-var read = read_cookie(cookie_key);
-var initialState = {};
-
-
-
-if (read.length === undefined || read.length === 0) {
-   initialState = {
-      valueCalendarEvents: [{ hour: 3, day: 11, Mon: 5 }, { hour: 2, day: 11, Mon: 5 }, { hour: 1, day: 11, Mon: 5 }, { hour: 4, day: 11, Mon: 5 }, { hour: 5, day: 11, Mon: 5 }, { hour: 3, day: 8, Mon: 5 }, { hour: 3, day: 9, Mon: 5 }, { hour: 3, day: 10, Mon: 5 }, { hour: 3, day: 12, Mon: 5 }, { hour: 3, day: 13, Mon: 5 }, { hour: 3, day: 14, Mon: 5 },]
-
-   }
-
-   bake_cookie(cookie_key, initialState.valueCalendarEvents);
-
-} else {
+// const cookie_key = 'arrEventCookie';
+// var read = read_cookie(cookie_key);
+// var initialState = {};
+var data = new Date();
+var toDayDate = data.getDate();
+var currentMonth = data.getMonth() + 1;
 
 
-   initialState = {
-      valueCalendarEvents: read_cookie(cookie_key),
-
-   }
-
+// if (read.length === undefined || read.length === 0) {
+var initialState = {
+   valueCalendarEvents: [{ hour: 3, day: toDayDate, Mon: currentMonth }, { hour: 2, day: toDayDate, Mon: currentMonth }, { hour: 1, day: toDayDate, Mon: currentMonth }, { hour: 4, day: toDayDate, Mon: currentMonth }, { hour: 5, day: toDayDate, Mon: currentMonth }, { hour: 3, day: toDayDate - 3, Mon: currentMonth }, { hour: 3, day: toDayDate - 2, Mon: currentMonth }, { hour: 3, day: toDayDate - 1, Mon: currentMonth }, { hour: 3, day: toDayDate + 1, Mon: currentMonth }, { hour: 3, day: toDayDate + 2, Mon: currentMonth }, { hour: 3, day: toDayDate + 3, Mon: currentMonth },]
 
 }
+
+// bake_cookie(cookie_key, initialState.valueCalendarEvents);
+
+// } else {
+
+
+//    initialState = {
+//       valueCalendarEvents: read_cookie(cookie_key),
+
+//    }
+
+
+// }
 
 export const arrayOfCalendarEventsSlice = createSlice({
 

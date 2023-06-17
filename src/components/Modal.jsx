@@ -8,13 +8,13 @@ const Modal = () => {
    var addCalendarEvents = {};
    var eventPresenceFlag;
    const dispatch = useDispatch();
-   const [modalTextDate, setModalTextDate] = useState("MM-DD-HH");
+   const [modalTextDate, setModalTextDate] = useState("MM-DD-hh");
    const [value, setValue] = useState("");
    const modalScale = useSelector((state) => state.modalEvent.value);
    const arrayCalendarEvents = useSelector((state) => state.arrayOfCalendarEvents.valueCalendarEvents);
 
    if (value.length === 0 && modalTextDate.length > 8) {
-      setModalTextDate("MM-DD-HH");
+      setModalTextDate("MM-DD-hh");
    };
 
    addCalendarEvents = {
